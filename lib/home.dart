@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_notifications_local/notification_service.dart';
 
 
 class Home extends StatefulWidget {
@@ -13,10 +14,15 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Scaffold(
-        body: Container(
-          child: ElevatedButton(onPressed: (){
-
-          }, child: Text("Send Notification")),
+        body: Center(
+          child: Container(
+            child: ElevatedButton(onPressed: (){
+              NotificationService().ShowNotifiaction(
+                title: 'here',
+                body: 'there are'
+              );
+            }, child: Text("Send Notification")),
+          ),
         ),
       ),
     );
